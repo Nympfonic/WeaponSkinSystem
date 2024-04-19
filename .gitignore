@@ -70,3 +70,26 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/WeaponSkinSystem/references/Aki.Reflection.dll
+/WeaponSkinSystem/references/Assembly-CSharp-firstpass.dll
+/WeaponSkinSystem/references/Assembly-CSharp.dll
+/WeaponSkinSystem/references/Comfort.dll
+/WeaponSkinSystem/references/ItemComponent.Types.dll
+/WeaponSkinSystem/references/ItemTemplate.Types.dll
+/WeaponSkinSystem/references/Newtonsoft.Json.dll
+/WeaponSkinSystem/references/Newtonsoft.Json.UnityConverters.dll
+/WeaponSkinSystem/references/Sirenix.Serialization.dll
+/WeaponSkinSystem/references/Unity.TextMeshPro.dll
+/WeaponSkinSystem/references/UnityEngine.AnimationModule.dll
+/WeaponSkinSystem/references/UnityEngine.AssetBundleModule.dll
+/WeaponSkinSystem/references/UnityEngine.AudioModule.dll
+/WeaponSkinSystem/references/UnityEngine.CoreModule.dll
+/WeaponSkinSystem/references/UnityEngine.dll
+/WeaponSkinSystem/references/UnityEngine.GridModule.dll
+/WeaponSkinSystem/references/UnityEngine.IMGUIModule.dll
+/WeaponSkinSystem/references/UnityEngine.InputModule.dll
+/WeaponSkinSystem/references/UnityEngine.PhysicsModule.dll
+/WeaponSkinSystem/references/UnityEngine.TextRenderingModule.dll
+/WeaponSkinSystem/references/UnityEngine.UI.dll
+/WeaponSkinSystem/references/UnityEngine.UIElementsModule.dll
+/WeaponSkinSystem/references/UnityEngine.UIModule.dll

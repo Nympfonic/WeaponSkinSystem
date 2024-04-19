@@ -2,13 +2,12 @@
 
 namespace WeaponSkinSystem
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin("com.Arys.WeaponSkinSystem", "Arys' Weapon Skin System", "1.0.0")]
     public class Plugin : BaseUnityPlugin
     {
         private void Awake()
         {
-            // Plugin startup logic
-            Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
+
         }
     }
 }
