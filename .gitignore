@@ -72,4 +72,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Project
-/WeaponSkinSystem/references/*
+/WeaponSkinSystem/[Oo]bj/**
+/WeaponSkinSystem/[Oo]bj/**/
+/WeaponSkinSystem/[Rr]eferences/**
