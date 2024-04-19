@@ -7,7 +7,7 @@
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
-    <RootNamespace>Arys-$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <RootNamespace>Arys.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <BaseOutputPath>build</BaseOutputPath>
     <Copyright>Arys 2024</Copyright>
   </PropertyGroup>
