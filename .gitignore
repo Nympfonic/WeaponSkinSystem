@@ -73,7 +73,5 @@ crashlytics-build.properties
 
 # Project
 /WeaponSkinSystem/[Oo]bj/**
+/WeaponSkinSystem/[Oo]bj/Debug/**/**
 /WeaponSkinSystem/[Rr]eferences/**
-/WeaponSkinSystem/obj/Debug/net471/WeaponSkinSystem.assets.cache
-/WeaponSkinSystem/obj/WeaponSkinSystem.csproj.nuget.g.props
-/WeaponSkinSystem/obj/WeaponSkinSystem.csproj.nuget.g.targets
