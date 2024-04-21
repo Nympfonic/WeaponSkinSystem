@@ -259,14 +259,21 @@ namespace Arys.WeaponSkinSystem.Editor
                         // Draw Quest array
                         for (int i = 0; i < questRequirementsProperty.arraySize; i++)
                         {
-                            var questRequirementsRect3 = new Rect(
+                            var questRequirementsLabelRect2 = new Rect(
                                 addQuestRect.x - 14f,
                                 addQuestRect.y + (i + 1) * EditorGUIUtility.singleLineHeight + (i + 1) * 4f * EditorGUIUtility.standardVerticalSpacing,
-                                questRequirementsRect.width - 18f,
+                                0.25f * (questRequirementsRect.width - 18f),
+                                EditorGUIUtility.singleLineHeight
+                            );
+                            var questRequirementsRect2 = new Rect(
+                                questRequirementsLabelRect2.x + questRequirementsLabelRect2.width,
+                                questRequirementsLabelRect2.y,
+                                questRequirementsRect.width - 18f - questRequirementsLabelRect2.width,
                                 EditorGUIUtility.singleLineHeight
                             );
 
-                            EditorGUI.PropertyField(questRequirementsRect3, questRequirementsProperty.GetArrayElementAtIndex(i));
+                            EditorGUI.LabelField(questRequirementsLabelRect2, $"Quest {i + 1} ID:");
+                            EditorGUI.PropertyField(questRequirementsRect2, questRequirementsProperty.GetArrayElementAtIndex(i));
                         }
                     }
                 }
