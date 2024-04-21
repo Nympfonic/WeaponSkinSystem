@@ -25,7 +25,7 @@ namespace Arys.WeaponSkinSystem.Editor
             var modderNoteRect = new Rect(
                 modderNoteLabelRect.x + modderNoteLabelRect.width,
                 modderNoteLabelRect.y,
-                0.55f * position.width,
+                0.65f * position.width,
                 EditorGUIUtility.singleLineHeight
             );
 
@@ -33,18 +33,33 @@ namespace Arys.WeaponSkinSystem.Editor
             var itemIdLabelRect = new Rect(
                 position.x,
                 position.y + row * EditorGUIUtility.singleLineHeight + (10f + row * 4f) * EditorGUIUtility.standardVerticalSpacing,
-                0.1f * position.width,
+                0.15f * position.width,
                 EditorGUIUtility.singleLineHeight
             );
             var itemIdRect = new Rect(
                 itemIdLabelRect.x + itemIdLabelRect.width,
                 itemIdLabelRect.y,
-                0.3f * position.width,
+                0.35f * position.width,
+                EditorGUIUtility.singleLineHeight
+            );
+            row++;
+
+            // Row 3
+            var skinNameLabelRect = new Rect(
+                position.x,
+                position.y + row * EditorGUIUtility.singleLineHeight + (10f + row * 4f) * EditorGUIUtility.standardVerticalSpacing,
+                0.15f * position.width,
+                EditorGUIUtility.singleLineHeight
+            );
+            var skinNameRect = new Rect(
+                skinNameLabelRect.x + skinNameLabelRect.width,
+                skinNameLabelRect.y,
+                0.35f * position.width,
                 EditorGUIUtility.singleLineHeight
             );
             var skinTextureLabelRect = new Rect(
-                itemIdRect.x + itemIdRect.width + horizontalSpacing,
-                itemIdRect.y,
+                skinNameRect.x + skinNameRect.width + horizontalSpacing,
+                skinNameRect.y,
                 0.15f * position.width,
                 EditorGUIUtility.singleLineHeight
             );
@@ -56,7 +71,7 @@ namespace Arys.WeaponSkinSystem.Editor
             );
             row++;
 
-            // Row 3
+            // Row 4
             var isLockedBehindPrerequisiteLabelRect = new Rect(
                 position.x,
                 position.y + row * EditorGUIUtility.singleLineHeight + (10f + row * 4f) * EditorGUIUtility.standardVerticalSpacing,
@@ -71,7 +86,7 @@ namespace Arys.WeaponSkinSystem.Editor
             );
             row++;
 
-            // Row 4
+            // Row 5
             var mustBeLevelLabelRect = new Rect(
                 position.x,
                 position.y + row * EditorGUIUtility.singleLineHeight + (10f + row * 4f) * EditorGUIUtility.standardVerticalSpacing,
@@ -93,12 +108,12 @@ namespace Arys.WeaponSkinSystem.Editor
             var levelRequirementRect = new Rect(
                 levelRequirementLabelRect.x + levelRequirementLabelRect.width,
                 levelRequirementLabelRect.y,
-                0.3f * position.width,
+                0.4f * position.width,
                 EditorGUIUtility.singleLineHeight
             );
             row++;
 
-            // Row 5
+            // Row 6
             var mustBeLoyaltyLevelWithTraderLabelRect = new Rect(
                 position.x,
                 position.y + row * EditorGUIUtility.singleLineHeight + (10f + row * 4f) * EditorGUIUtility.standardVerticalSpacing,
@@ -120,12 +135,12 @@ namespace Arys.WeaponSkinSystem.Editor
             var loyaltyLevelRequirementRect = new Rect(
                 loyaltyLevelRequirementLabelRect.x + loyaltyLevelRequirementLabelRect.width,
                 loyaltyLevelRequirementLabelRect.y,
-                0.3f * position.width,
+                0.4f * position.width,
                 EditorGUIUtility.singleLineHeight
             );
             row++;
 
-            // Row 6 (Trader extended)
+            // Row 7 (Trader extended)
             var traderIdLabelRect = new Rect(
                 mustBeLoyaltyLevelWithTraderRect.x + mustBeLoyaltyLevelWithTraderRect.width,
                 position.y + row * EditorGUIUtility.singleLineHeight + (10f + row * 4f) * EditorGUIUtility.standardVerticalSpacing,
@@ -135,16 +150,59 @@ namespace Arys.WeaponSkinSystem.Editor
             var traderIdRect = new Rect(
                 traderIdLabelRect.x + traderIdLabelRect.width,
                 traderIdLabelRect.y,
+                0.4f * position.width,
+                EditorGUIUtility.singleLineHeight
+            );
+            row++;
+
+            // Row 8
+            var mustHaveCompletedQuestLabelRect = new Rect(
+                position.x,
+                position.y + row * EditorGUIUtility.singleLineHeight + (10f + row * 4f) * EditorGUIUtility.standardVerticalSpacing,
+                0.25f * position.width,
+                EditorGUIUtility.singleLineHeight
+            );
+            var mustHaveCompletedQuestRect = new Rect(
+                mustHaveCompletedQuestLabelRect.x + mustHaveCompletedQuestLabelRect.width,
+                mustHaveCompletedQuestLabelRect.y,
+                0.1f * position.width,
+                EditorGUIUtility.singleLineHeight
+            );
+            var questRequirementsLabelRect = new Rect(
+                mustHaveCompletedQuestRect.x + mustHaveCompletedQuestRect.width,
+                mustHaveCompletedQuestRect.y,
                 0.3f * position.width,
                 EditorGUIUtility.singleLineHeight
             );
+            SerializedProperty questRequirementsProperty = property.FindPropertyRelative("questRequirements");
+            var questRequirementsRect = new Rect(
+                questRequirementsLabelRect.x,
+                questRequirementsLabelRect.y,
+                position.width - mustHaveCompletedQuestLabelRect.width - mustHaveCompletedQuestRect.width,
+                EditorGUIUtility.singleLineHeight
+            );
+            var addQuestRect = new Rect(
+                questRequirementsRect.x,
+                questRequirementsRect.y + EditorGUIUtility.singleLineHeight + 4f * EditorGUIUtility.standardVerticalSpacing,
+                (questRequirementsRect.width - 32f) / 2,
+                EditorGUIUtility.singleLineHeight
+            );
+            var removeQuestRect = new Rect(
+                addQuestRect.x + addQuestRect.width,
+                addQuestRect.y,
+                addQuestRect.width,
+                EditorGUIUtility.singleLineHeight
+            );
 
-            // Draw
+            // Draw properties
             EditorGUI.LabelField(modderNoteLabelRect, "Item name (reminder/optional):");
             EditorGUI.PropertyField(modderNoteRect, property.FindPropertyRelative("modderNote"), GUIContent.none);
 
             EditorGUI.LabelField(itemIdLabelRect, "Item ID:");
             EditorGUI.PropertyField(itemIdRect, property.FindPropertyRelative("itemId"), GUIContent.none);
+
+            EditorGUI.LabelField(skinNameLabelRect, "Skin name:");
+            EditorGUI.PropertyField(skinNameRect, property.FindPropertyRelative("skinName"), GUIContent.none);
             EditorGUI.LabelField(skinTextureLabelRect, "Skin texture:");
             EditorGUI.PropertyField(skinTextureRect, property.FindPropertyRelative("skinTexture"), GUIContent.none);
 
@@ -175,6 +233,43 @@ namespace Arys.WeaponSkinSystem.Editor
                     EditorGUI.LabelField(traderIdLabelRect, "Trader ID:");
                     EditorGUI.PropertyField(traderIdRect, property.FindPropertyRelative("traderId"), GUIContent.none);
                 }
+
+                SerializedProperty questToggle = property.FindPropertyRelative("mustHaveCompletedQuest");
+                EditorGUI.LabelField(mustHaveCompletedQuestLabelRect, "Quest requirement(s)?");
+                EditorGUI.PropertyField(mustHaveCompletedQuestRect, questToggle, GUIContent.none);
+
+                if (questToggle.boolValue)
+                {
+                    EditorGUI.LabelField(questRequirementsLabelRect, "Required quests (expand me):");
+                    EditorGUI.PropertyField(questRequirementsRect, questRequirementsProperty, GUIContent.none);
+
+                    if (questRequirementsProperty.isExpanded)
+                    {
+                        // Limit adding quests only up to 3
+                        if (GUI.Button(addQuestRect, "Add quest") && questRequirementsProperty.arraySize < 3)
+                        {
+                            questRequirementsProperty.InsertArrayElementAtIndex(questRequirementsProperty.arraySize);
+                        }
+
+                        if (GUI.Button(removeQuestRect, "Remove quest") && questRequirementsProperty.arraySize > 0)
+                        {
+                            questRequirementsProperty.DeleteArrayElementAtIndex(questRequirementsProperty.arraySize - 1);
+                        }
+
+                        // Draw Quest array
+                        for (int i = 0; i < questRequirementsProperty.arraySize; i++)
+                        {
+                            var questRequirementsRect3 = new Rect(
+                                addQuestRect.x - 14f,
+                                addQuestRect.y + (i + 1) * EditorGUIUtility.singleLineHeight + (i + 1) * 4f * EditorGUIUtility.standardVerticalSpacing,
+                                questRequirementsRect.width - 18f,
+                                EditorGUIUtility.singleLineHeight
+                            );
+
+                            EditorGUI.PropertyField(questRequirementsRect3, questRequirementsProperty.GetArrayElementAtIndex(i));
+                        }
+                    }
+                }
             }
 
             EditorGUI.EndProperty();
@@ -182,7 +277,25 @@ namespace Arys.WeaponSkinSystem.Editor
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return EditorGUIUtility.singleLineHeight * 6f + (10f + 4f * 6f) * EditorGUIUtility.standardVerticalSpacing;
+            int rows = 4;
+
+            SerializedProperty prerequisiteToggle = property.FindPropertyRelative("isLockedBehindPrerequisite");
+            SerializedProperty questToggle = property.FindPropertyRelative("mustHaveCompletedQuest");
+            SerializedProperty questRequirementsProperty = property.FindPropertyRelative("questRequirements");
+
+            if (prerequisiteToggle.boolValue)
+            {
+                rows += 4;
+
+                if (questToggle.boolValue)
+                {
+                    rows += 1;
+                }
+            }
+
+            rows += questRequirementsProperty.arraySize;
+
+            return EditorGUIUtility.singleLineHeight * rows + (10f + 4f * rows) * EditorGUIUtility.standardVerticalSpacing;
         }
     }
 }

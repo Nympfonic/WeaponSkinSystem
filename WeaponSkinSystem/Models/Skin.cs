@@ -8,8 +8,10 @@ namespace Arys.WeaponSkinSystem.Models
     public class Skin
     {
         public string modderNote;
+
         [MongoId] public string itemId;
 
+        public string skinName;
         public Texture2D skinTexture;
 
         public bool isLockedBehindPrerequisite;
@@ -20,5 +22,8 @@ namespace Arys.WeaponSkinSystem.Models
         public bool mustBeLoyaltyLevelWithTrader;
         [Range(0, 4)] public int loyaltyLevelRequirement = 0;
         [MongoId] public string traderId;
+
+        public bool mustHaveCompletedQuest;
+        public Quest[] questRequirements;
     }
 }
