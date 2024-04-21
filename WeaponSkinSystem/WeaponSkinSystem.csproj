@@ -30,6 +30,10 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\..\Arys-AssetImporter\AssetImporter\CustomAssetImporter.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <Reference Include="Aki.Reflection">
       <HintPath>references\Aki.Reflection.dll</HintPath>
     </Reference>
